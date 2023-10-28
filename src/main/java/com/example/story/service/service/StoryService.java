@@ -1,7 +1,6 @@
 package com.example.story.service.service;
 
 import com.example.story.entity.StoriesEntity;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
