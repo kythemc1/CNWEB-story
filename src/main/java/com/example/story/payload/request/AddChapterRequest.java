@@ -29,5 +29,5 @@ public class AddChapterRequest {
 
     private Date update_at;
 
-    private StoriesEntity story;
+    private String storyName;
 }

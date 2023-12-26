@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -95,7 +96,9 @@ public class StoryController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    @GetMapping(value = "sort-by-category/{page}")
+
+
+    @GetMapping(value = "sort-by-time/{page}")
     public ResponseEntity<?>  sortByTime(@PathVariable int page){
 
         List<StoriesEntity> list=storyService.sortByTime(page);
@@ -112,5 +115,11 @@ public class StoryController {
         return ResponseEntity.ok("successfully");
     }
 
+    @GetMapping(value = "search-story/{name}")
+    private ResponseEntity<?> searchStory(@PathVariable String name){
+        List<StoriesEntity> list=storyRepository.findByNameContaining(name);
+
+        return ResponseEntity.ok(list);
+    }
 
 }

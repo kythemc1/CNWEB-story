@@ -52,6 +52,8 @@ public class UserServiceImpl implements UserService {
 
         message.setTo(userEntity.getEmail());
         message.setSubject("mat khau cua ban la");
+
+        // mật khẩu mặc định là 1234
         message.setText("1234");
 
         // Send Message!

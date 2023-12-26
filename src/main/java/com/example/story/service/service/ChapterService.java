@@ -14,5 +14,5 @@ public interface ChapterService {
 
     List<ChapterResponse> listChapter();
 
-    ChapterEntity getChapter(String name);
+    ChapterResponse getChapter(String name,String subName);
 }

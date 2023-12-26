@@ -59,6 +59,7 @@ public class StoriesEntity {
     @Column(name = "author_details")
     private String author_details;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "story", cascade = CascadeType.ALL)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
