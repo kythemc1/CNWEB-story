@@ -14,6 +14,7 @@ public interface StoryRepository extends JpaRepository<StoriesEntity,Long> {
 
     StoriesEntity findByName(String name);
 
+
     List<StoriesEntity> findByNameContaining(String name);
 //    @Query("SELECT e  from StoriesEntity e")
 //    Page<StoriesEntity> findAll(Pageable pageable);

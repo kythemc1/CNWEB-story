@@ -118,7 +118,6 @@ public class StoryController {
     @GetMapping(value = "search-story/{name}")
     private ResponseEntity<?> searchStory(@PathVariable String name){
         List<StoriesEntity> list=storyRepository.findByNameContaining(name);
-
         return ResponseEntity.ok(list);
     }
 

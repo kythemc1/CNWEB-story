@@ -1,7 +1,9 @@
 package com.example.story.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,5 +47,11 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name = "RoleId"))
     private Set<RoleEntity> listRoleEntity = new HashSet<>();
 
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "username", cascade = CascadeType.ALL)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private Collection<FollowEntity> followEntities;
 
 }

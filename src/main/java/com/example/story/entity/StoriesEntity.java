@@ -65,6 +65,12 @@ public class StoriesEntity {
     @ToString.Exclude
     private Collection<ChapterEntity> chapters;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "storyName", cascade = CascadeType.ALL)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private Collection<FollowEntity> followEntities;
+
 //    @OneToMany(mappedBy = "story", cascade = CascadeType.ALL)
 //    @EqualsAndHashCode.Exclude
 //    @ToString.Exclude
